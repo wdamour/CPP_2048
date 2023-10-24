@@ -16,29 +16,17 @@ public:
 
     // Fonction pour afficher la grille du jeu
     void afficherGrille() {
-        for (int i = 0; i < 4; i++) {
-            std::cout <<"____________________" << std::endl;
-            std::cout << "|    |    |    |    |" << std::endl;
-            for (int j = 0; j < 4; j++) {
+        for (int i = 0; i < SIZE; i++) {
+            for (int j = 0; j < SIZE; j++) {
                 if (grille[i][j] == 0) {
-                    std::cout << "|   -";
-                }
-                else if(grille[i][j]<10) {
-                    std::cout << "|   " << grille[i][j];
-                }
-                else if(grille[i][j]<100) {
-                    std::cout << "|  " << grille[i][j];
-                }
-                else if(grille[i][j]<1000) {
-                    std::cout << "| " << grille[i][j];
+                    std::cout << "    -";
                 }
                 else {
-                    std::cout << "|" << grille[i][j];
+                    std::cout << " " << grille[i][j] << " ";
                 }
             }
-            std::cout << "|"<< std::endl  << "|    |    |    |    |" << std::endl;
+            std::cout << std::endl;
         }
-        std::cout <<"¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯¯" << std::endl;
         std::cout << std::endl;
     }
 
@@ -61,7 +49,6 @@ public:
         }
     }
 
-
 private:
     std::vector<std::vector<int>> grille;
 };
@@ -69,5 +56,6 @@ private:
 int main() {
     Grille2048 grille;
     grille.afficherGrille();
+
     return 0;
 }
